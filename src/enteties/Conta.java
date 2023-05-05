@@ -13,6 +13,10 @@ public abstract class  Conta {
 		this.nome = nome;
 	}
 	
+	public Conta() {
+		
+	}
+	
 	public Integer getNumeroConta() {
 		return numeroConta;
 	}
@@ -32,13 +36,18 @@ public abstract class  Conta {
 		this.nome = nome;
 	}
 	
-	public double sacar(double sacar) {
-		 saldo -= sacar;
-		 return saldo;
-		 
-		
+	public abstract double sacar(double saldo);
+	public abstract double depositar(double saldo);
+	
+	@Override
+	public String toString() {
+	    return "ContaCorrente{" +
+	            "numeroConta=" + numeroConta +
+	            ", saldo=" + saldo +
+	            ", nomeTitular= " + nome;
 	}
 	
+
 	
 	
 	
